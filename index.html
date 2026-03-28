@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>ShopEasy</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- Navbar -->
+<div class="navbar">
+
+<div class="logo">ShopEasy 🛒</div>
+
+
+<input 
+type="text" 
+id="search" 
+placeholder="Search products..." 
+onkeyup="searchProduct()"
+>
+
+
+<div class="nav-right">
+
+Cart 🛍 (<span id="count">0</span>)
+
+</div>
+
+
+</div>
+
+
+
+<!-- Categories -->
+<div class="categories">
+
+<button onclick="filterCategory('all')">All</button>
+
+<button onclick="filterCategory('electronics')">Electronics</button>
+
+<button onclick="filterCategory('fashion')">Fashion</button>
+
+<button onclick="filterCategory('mobile')">Mobiles</button>
+
+<button onclick="filterCategory('accessories')">Accessories</button>
+
+</div>
+
+
+
+<!-- Banner -->
+<div class="banner">
+
+<h1>Big Deals Today 🔥</h1>
+
+<p>Best prices on top products</p>
+
+</div>
+
+
+
+<!-- Products -->
+<div class="products" id="productList">
+
+
+
+<div class="card electronics">
+
+<img src="https://imgs.search.brave.com/rwsGH6JjY3VWKaOloGYyyDoPf29-DoafyQurPCohGUE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/bW9zLmNtcy5mdXR1/cmVjZG4ubmV0L0V4/eVhBNVVzaEc1S0RK/RDVDZUI5cVAuanBn">
+
+<h3>Headphones</h3>
+
+<p class="rating">⭐⭐⭐⭐☆</p>
+
+<p class="price">
+
+₹999 <span class="old">₹1499</span>
+
+</p>
+
+<button onclick="addToCart('Headphones',999)">Add to Cart</button>
+
+</div>
+
+
+
+<div class="card fashion">
+
+<img src="https://imgs.search.brave.com/jOrijxU88H-QQIt3FjQ0d_u8_xUy3gPuK3kHFpDNknY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lZ29z/cy5pbi9jZG4vc2hv/cC9maWxlcy9TUC0w/N19CTEFDSy5qcGc_/dj0xNzU4OTY5ODE2/JndpZHRoPTE5NTA">
+
+<h3>Shoes</h3>
+
+<p class="rating">⭐⭐⭐⭐⭐</p>
+
+<p class="price">
+
+₹1499 <span class="old">₹1999</span>
+
+</p>
+
+<button onclick="addToCart('Shoes',1499)">Add to Cart</button>
+
+</div>
+
+
+
+<div class="card electronics">
+
+<img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400">
+
+<h3>Laptop</h3>
+
+<p class="rating">⭐⭐⭐⭐☆</p>
+
+<p class="price">
+
+₹45999 <span class="old">₹55999</span>
+
+</p>
+
+<button onclick="addToCart('Laptop',45999)">Add to Cart</button>
+
+</div>
+
+
+
+<div class="card mobile">
+
+<img src="https://imgs.search.brave.com/QZeBjN7RnyZlmKxJflHFM3krGKV36L-j69cpggQ3AwM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS53aXJlZC5jb20v/cGhvdG9zLzY4ZDg4/ZDg3ZmFkMjJiYWNm/NjNjZTVkYS9tYXN0/ZXIvd18xNjAwLGNf/bGltaXQvRGJyYW5k/JTIwR2hvc3QlMjAy/LjAlMjAyJTIwQ2Fz/ZSUyMFNPVVJDRSUy/MEp1bGlhbiUyMENo/b2trYXR0dS5wbmc">
+
+<h3>Mobile</h3>
+
+<p class="rating">⭐⭐⭐⭐⭐</p>
+
+<p class="price">
+
+₹12999 <span class="old">₹15999</span>
+
+</p>
+
+<button onclick="addToCart('Mobile',12999)">Add to Cart</button>
+
+</div>
+
+
+
+<div class="card electronics">
+
+<img src="https://imgs.search.brave.com/8VYn-c_C-S6e85-iXcNTmKpDElwqRMFVoF12bMOrGNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/bW9zLmNtcy5mdXR1/cmVjZG4ubmV0L3BG/ZXF5WFo1eXFvNlRI/a0dIdVBtUVYuanBn">
+
+<h3>Speaker</h3>
+
+<p class="rating">⭐⭐⭐⭐☆</p>
+
+<p class="price">
+
+₹2499 <span class="old">₹2999</span>
+
+</p>
+
+<button onclick="addToCart('Speaker',2499)">Add to Cart</button>
+
+</div>
+
+
+
+<div class="card accessories">
+
+<img src="https://imgs.search.brave.com/GIQ5i6u8gaBUlma8ULv7syVRVKgja0rwuBaTan7xzRA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMDIv/Mzk5LzU2NS9zbWFs/bC9ibGFjay1sZWF0/aGVyLWJhZy1mcmVl/LXBob3RvLmpwZw">
+
+<h3>Bag</h3>
+
+<p class="rating">⭐⭐⭐⭐☆</p>
+
+<p class="price">
+
+₹899 <span class="old">₹1299</span>
+
+</p>
+
+<button onclick="addToCart('Bag',899)">Add to Cart</button>
+
+</div>
+
+
+
+</div>
+
+
+
+<!-- Cart -->
+<div class="cart-box">
+
+<h2>Your Cart 🛒</h2>
+
+<ul id="cartList"></ul>
+
+<h3>Total: ₹<span id="total">0</span></h3>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
