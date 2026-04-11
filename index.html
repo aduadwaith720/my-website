@@ -1,217 +1,111 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
-<title>ShopEasy</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy - Premium E-Commerce</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
 
-
-<!-- Navbar -->
-<div class="navbar">
-
-<div class="logo">ShopEasy 🛒</div>
-
-
-<input 
-type="text" 
-id="search" 
-placeholder="Search products..." 
-onkeyup="searchProduct()"
->
-
-
-<div class="nav-right">
-
-Cart 🛍 (<span id="count">0</span>)
-
-</div>
-
-
-</div>
-
-
-
-<!-- Categories -->
-<div class="categories">
-
-<button onclick="filterCategory('all')">All</button>
-
-<button onclick="filterCategory('electronics')">Electronics</button>
-
-<button onclick="filterCategory('fashion')">Fashion</button>
-
-<button onclick="filterCategory('mobile')">Mobiles</button>
-
-<button onclick="filterCategory('accessories')">Accessories</button>
-
-</div>
-
-
-
-<!-- Banner -->
-<div class="banner">
-
-<h1>Big Deals Today 🔥</h1>
-
-<p>Best prices on top products</p>
-
-</div>
-
-
-
-<!-- Products -->
-<div class="products" id="productList">
-
-
-
-<div class="card electronics">
-
-<img src="https://imgs.search.brave.com/rwsGH6JjY3VWKaOloGYyyDoPf29-DoafyQurPCohGUE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/bW9zLmNtcy5mdXR1/cmVjZG4ubmV0L0V4/eVhBNVVzaEc1S0RK/RDVDZUI5cVAuanBn">
-
-<h3>Headphones</h3>
-
-<p class="rating">⭐⭐⭐⭐☆</p>
-
-<p class="price">
-
-₹999 <span class="old">₹1499</span>
-
-</p>
-
-<button onclick="addToCart('Headphones',999)">Add to Cart</button>
-
-</div>
-
-
-
-<div class="card fashion">
-
-<img src="https://imgs.search.brave.com/jOrijxU88H-QQIt3FjQ0d_u8_xUy3gPuK3kHFpDNknY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lZ29z/cy5pbi9jZG4vc2hv/cC9maWxlcy9TUC0w/N19CTEFDSy5qcGc_/dj0xNzU4OTY5ODE2/JndpZHRoPTE5NTA">
-
-<h3>Shoes</h3>
-
-<p class="rating">⭐⭐⭐⭐⭐</p>
-
-<p class="price">
-
-₹1499 <span class="old">₹1999</span>
-
-</p>
-
-<button onclick="addToCart('Shoes',1499)">Add to Cart</button>
-
-</div>
-
-
-
-<div class="card electronics">
-
-<img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400">
-
-<h3>Laptop</h3>
-
-<p class="rating">⭐⭐⭐⭐☆</p>
-
-<p class="price">
-
-₹45999 <span class="old">₹55999</span>
-
-</p>
-
-<button onclick="addToCart('Laptop',45999)">Add to Cart</button>
-
-</div>
-
-
-
-<div class="card mobile">
-
-<img src="https://imgs.search.brave.com/QZeBjN7RnyZlmKxJflHFM3krGKV36L-j69cpggQ3AwM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS53aXJlZC5jb20v/cGhvdG9zLzY4ZDg4/ZDg3ZmFkMjJiYWNm/NjNjZTVkYS9tYXN0/ZXIvd18xNjAwLGNf/bGltaXQvRGJyYW5k/JTIwR2hvc3QlMjAy/LjAlMjAyJTIwQ2Fz/ZSUyMFNPVVJDRSUy/MEp1bGlhbiUyMENo/b2trYXR0dS5wbmc">
-
-<h3>Mobile</h3>
-
-<p class="rating">⭐⭐⭐⭐⭐</p>
-
-<p class="price">
-
-₹12999 <span class="old">₹15999</span>
-
-</p>
-
-<button onclick="addToCart('Mobile',12999)">Add to Cart</button>
-
-</div>
-
-
-
-<div class="card electronics">
-
-<img src="https://imgs.search.brave.com/8VYn-c_C-S6e85-iXcNTmKpDElwqRMFVoF12bMOrGNw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/bW9zLmNtcy5mdXR1/cmVjZG4ubmV0L3BG/ZXF5WFo1eXFvNlRI/a0dIdVBtUVYuanBn">
-
-<h3>Speaker</h3>
-
-<p class="rating">⭐⭐⭐⭐☆</p>
-
-<p class="price">
-
-₹2499 <span class="old">₹2999</span>
-
-</p>
-
-<button onclick="addToCart('Speaker',2499)">Add to Cart</button>
-
-</div>
-
-
-
-<div class="card accessories">
-
-<img src="https://imgs.search.brave.com/GIQ5i6u8gaBUlma8ULv7syVRVKgja0rwuBaTan7xzRA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMDIv/Mzk5LzU2NS9zbWFs/bC9ibGFjay1sZWF0/aGVyLWJhZy1mcmVl/LXBob3RvLmpwZw">
-
-<h3>Bag</h3>
-
-<p class="rating">⭐⭐⭐⭐☆</p>
-
-<p class="price">
-
-₹899 <span class="old">₹1299</span>
-
-</p>
-
-<button onclick="addToCart('Bag',899)">Add to Cart</button>
-
-</div>
-
-
-
-</div>
-
-
-
-<!-- Cart -->
-<div class="cart-box">
-
-<h2>Your Cart 🛒</h2>
-
-<ul id="cartList"></ul>
-
-<h3>Total: ₹<span id="total">0</span></h3>
-
-</div>
-
-
-
-<script src="script.js"></script>
-
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">ShopEasy <span class="accent">🛒</span></div>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search premium products..." onkeyup="searchProduct()">
+        </div>
+        <div class="nav-right">
+            <button id="themeToggle" class="icon-btn" aria-label="Toggle Dark Mode">🌙</button>
+            <button id="cartBtn" class="cart-btn" onclick="toggleCart()">
+                🛍 Cart <span class="badge" id="count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Categories -->
+    <nav class="categories">
+        <button class="active" onclick="filterCategory('all', this)">🌟 All</button>
+        <button onclick="filterCategory('electronics', this)">💻 Electronics</button>
+        <button onclick="filterCategory('fashion', this)">👕 Fashion</button>
+        <button onclick="filterCategory('mobile', this)">📱 Mobiles</button>
+        <button onclick="filterCategory('accessories', this)">🎒 Accessories</button>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Elevate Your Lifestyle ✨</h1>
+            <p>Discover curations of top-tier products.</p>
+        </div>
+    </section>
+
+    <!-- Sorting -->
+    <div class="controls-bar">
+        <span id="resultsCount">Showing all products</span>
+        <select id="sortSelect" onchange="sortProducts()">
+            <option value="default">Sort by Default</option>
+            <option value="low-high">Price: Low to High</option>
+            <option value="high-low">Price: High to Low</option>
+        </select>
+    </div>
+
+    <!-- Products -->
+    <main class="products" id="productList">
+        <!-- Products generated by JS to keep it clean and allow sorting -->
+    </main>
+
+    <!-- Cart Drawer -->
+    <div id="cartDrawer" class="cart-drawer">
+        <div class="cart-header">
+            <h2>Your Cart 🛍</h2>
+            <button onclick="toggleCart()" class="close-btn">✖</button>
+        </div>
+        <div class="cart-body">
+            <ul id="cartList">
+                <div class="empty-cart-msg">Your cart is feeling lonely. Add some products!</div>
+            </ul>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">Total: ₹<span id="total">0</span></div>
+            <button class="checkout-btn" onclick="openCheckout()">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div id="cartOverlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('productModal')">✖</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content checkout-content">
+            <button class="close-btn" onclick="closeModal('checkoutModal')">✖</button>
+            <h2>Secure Checkout 🔒</h2>
+            <form id="checkoutForm" onsubmit="processCheckout(event)">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" required placeholder="John Doe">
+                </div>
+                <div class="input-group">
+                    <label>Card Number</label>
+                    <input type="text" required pattern="\d{16}" placeholder="1234 5678 1234 5678" maxlength="16" title="Please enter a 16 digit card number without spaces">
+                </div>
+                <button type="submit" class="pay-btn">Pay ₹<span id="checkoutTotal">0</span></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer"></div>
+
+    <script src="script.js"></script>
 </body>
-
 </html>
